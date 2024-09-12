@@ -49,10 +49,6 @@ function Review({ setFeedback }) {
   }, []);
 
   const handleRating = (questionId, answer) => {
-    if (currentQuestionIndx === Questions.length - 1) {
-      setFeedback(false);
-    }
-
     setAnswer((prev) => ({ ...prev, [questionId]: answer }));
     localStorage.setItem(
       "answer",
@@ -65,6 +61,7 @@ function Review({ setFeedback }) {
       setcurrentquestionIndx(currentQuestionIndx + 1);
     } else {
       setGreet(true);
+      setFeedback(false);
       console.log("Thanks");
     }
   };
