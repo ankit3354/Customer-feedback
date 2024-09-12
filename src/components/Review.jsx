@@ -61,8 +61,10 @@ function Review({ setFeedback }) {
       setcurrentquestionIndx(currentQuestionIndx + 1);
     } else {
       setGreet(true);
-      setFeedback(false);
-      console.log("Thanks");
+      setTimeout(() => {
+        setFeedback(false);
+        console.log("Thanks for your feedback!");
+      }, 5000);
     }
   };
 
