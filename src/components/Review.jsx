@@ -49,7 +49,7 @@ function Review({ setFeedback }) {
   }, []);
 
   const handleRating = (questionId, answer) => {
-    if (currentQuestionIndx !== Questions.length - 1) {
+    if (currentQuestionIndx === Questions.length - 1) {
       setFeedback(false);
     }
 
