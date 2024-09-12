@@ -36,7 +36,7 @@ const Questions = [
   },
 ];
 
-function Review() {
+function Review({ setFeedback }) {
   const [currentQuestionIndx, setcurrentquestionIndx] = useState(0);
   const [answer, setAnswer] = useState({});
   const [sessionId, setSessionId] = useState(null);
@@ -50,7 +50,7 @@ function Review() {
 
   const handleRating = (questionId, answer) => {
     if (currentQuestionIndx !== Questions.length - 1) {
-      handleNext();
+      setFeedback(false);
     }
 
     setAnswer((prev) => ({ ...prev, [questionId]: answer }));
@@ -79,7 +79,6 @@ function Review() {
     handleNext();
   };
 
-  
   const currentQuestion = Questions[currentQuestionIndx];
 
   return (

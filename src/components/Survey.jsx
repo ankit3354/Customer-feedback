@@ -17,7 +17,7 @@ function Survey() {
           </button>
         </div>
       ) : (
-        <Review />
+        <Review setFeedback={setFeedback} />
       )}
     </div>
   );
